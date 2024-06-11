@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tela_veterinario.css">
+    <script src="tela_veterinario.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="overflow-hidden h-screen w-screen flex flex-col">
+    <div id="telaEscura" class="opacidade hidden flex hidden items-center z1 justify-center h-screen w-screen absolute">
+        <div class="tela rounded-2xl h-3/4 w-1/2 z1 flex flex-col">
+            <div class="w-full h-10 pl-8 flex">
+                <div id="voltarTelaEscura" class="cursor-pointer flex h-full items-center space-x-2">
+                    <img class="h-1/2" src="../img/Arrow back.png" alt="">
+                    <span>Voltar</span>
+                </div>
+            </div>
+            <div class="flex items-center flex-row w-full h-[90%]">
+                <div class="flex flex-col h-full items-center space-y-4 justify-center w-1/3">
+                    <div class="bg-white border-2 b-azul-escuro h-1/2 flex items-center justify-center rounded-2xl w-5/6">
+                        <img id="imagemAnimal" class="h-2/3 w-5/6 rounded-full" src="../img/image-removebg-preview (8).png" alt="">
+                    </div>
+                    <div class="w-full flex flex-col items-center">
+                        <button id="btnAddReceita" class="bg-white w-2/3 letra-azul border-2 rounded-md font-bold p-2 b-azul-escuro">Postar receita</button>
+                    </div>
+                </div>
+                <div class="h-4/6 rounded-md w-2 bg-black"></div>
+                <div class="flex justify-evenly rounded-md flex-col space-y-4 py-6 h-full w-2/3 items-center">
+                    <div class="flex justify-evenly items-center text-center rounded-md flex-col bg-white h-1/2 w-5/6">
+                        <div class="w-4/5 h-[12%] items-center space-x-2 justify-center flex text-center border-b-2 b-azul-escuro">
+                            <span id="nomeDono" class="font-bold text-2xl">Cleiton -</span>
+                            <span id="nomeAnimal" class="font-bold text-2xl">Auau</span>
+                        </div>
+                        <div class="w-4/5 h-1/2 border-2 b-azul-escuro space-y-2 flex flex-col">
+                            <textarea placeholder="escreva a receita aqui" class="resize-none h-full w-full" maxlength="150" name="" id="receita"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-between space-y-5 py-2 items-center text-center rounded-md flex-col bg-white h-1/2 max-h-[50%] w-5/6">
+                        <div class="w-3/5 h-[18%] items-center space-x-2 justify-center flex text-center border-b-2 b-azul-escuro">
+                            <span id="nomeDono" class="font-bold text-2xl">Histórico de receitas</span>
+                        </div>
+                        <div id="historico" class="w-4/5 h-auto space-y-2 flex flex-col pb-1 overflow-y-auto">
+                            <!-- <div class="flex-col w-full flex b-azul-escuro border-b-2 text-center justify-center items-center">
+                                <span>10/10/1000</span>
+                                <span class="w-full">Este cachorro precisa de: uma dose de hsdhsd, jshdhsd e sdjshds. Tomar todo o dia</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="flex flex-row space-x-9 h-2/5 w-full justify-evenly">
+        <div class="h-2/6 w-4/5 items-center space-x-9 flex ">
+            <a href="../login funcionario/login_funcionario.html">
+                            <div class="flex flex-row items-center space-x-2">
+                <img src="../img/Arrow back.png" alt="">
+                <p class="text-xl">Voltar</p>
+            </div>
+            </a>
+            <div class="h-full tela flex-grow rounded-b-3xl items-center flex justify-around">
+                <div class="flex flex-row border-roxa h-2/3 rounded-2xl p-2 border-4 w-4/5">
+                    <input class="focus:outline-none px-2 flex-grow bg-transparent" type="text" placeholder="Filtre aqui">
+                    <img src="../img/search (1).png" alt="">
+                </div>
+                <img src="../img/Filter list.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main class="h-3/5">
+        <table id="tbl_produtos" class="tela w-full h-full space-y-8 flex flex-col">
+            <thead class="flex h-1/6">
+                <tr class="text-white h-full flex flex-row items-center w-full space-x-1">
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center"></th>
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center">ID</th>
+                    <th class="w-1/6 azul-escuro text-white flex justify-center items-center h-full">Data</th>
+                    <th class="w-1/4 azul-escuro text-white flex justify-center items-center h-full">Receita</th>
+                    <th class="w-1/6 text-white azul-escuro flex justify-center items-center h-full">Animal</th>
+                    <th class="w-acao h-full space-x-4 flex-grow azul-escuro justify-end flex pr-6 items-center flex">
+                        <img id="lixeira" class="h-3/5" src="../img/Trash Can.png" alt="Delete">
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="h-5/6 overflow-y-auto overflow-x-hidden space-y-2">
+                <!-- <tr class="text-black h-1/6 flex flex-row items-center w-item space-x-1">
+                    <th class="w-id h-full bg-white flex justify-center items-center">
+                        <input class="h-2/3 w-2/3" type="checkbox">
+                    </th>
+                    <th class="w-id bg-white flex justify-center items-center h-full">1</th>
+                    <th class="w-1/6 bg-white flex justify-center items-center h-full">Ração para pássssasas</th>
+                    <th class="w-1/6 bg-white flex justify-center items-center h-full">Cachorro</th>
+                    <th class="w-numero bg-white flex justify-center items-center h-full">R$29.99</th>
+                </tr> -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CMS_ADM_produtos.css">
+    <script src="CMS_ADM_produtos.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen w-screen flex flex-col">
+    <div id="telaEscura" class="opacidade hidden flex items-center z1 justify-center h-screen w-screen absolute">
+        <div class="tela rounded-2xl h-3/4 w-1/2 z1 flex flex-col">
+            <div class="w-full h-10 pl-8 flex">
+                <div id="voltarTelaEscura" class="cursor-pointer flex h-full items-center space-x-2">
+                    <img class="h-1/2" src="../img/Arrow back.png" alt="">
+                    <span>Voltar</span>
+                </div>
+            </div>
+            <div class="flex items-center flex-row flex-grow">
+                <div class="flex flex-col h-full items-center space-y-4 justify-center w-1/3">
+                    <div id="divImagemProduto" class="bg-white border-2 b-azul-escuro h-1/2 flex items-center justify-center rounded-2xl w-5/6">
+                        <img class="h-2/3 w-2/3" src="../img/image-removebg-preview (8).png" alt="">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <input id="urlImagem" class="border-2 b-azul-escuro rounded-md text-md placeholder:text-sm text-center" placeholder="Insira a url da imagem aqui" type="text">
+                        <span id="errorLink" class="text-sm text-red-500 hidden">*Link não achado*</span>
+                    </div>
+                    <div class="w-full flex flex-col items-center">
+                        <button id="btnAddProduct" class="bg-white w-2/3 letra-azul border-2 rounded-md font-bold p-2 b-azul-escuro">Postar produto</button>
+                        <button id="btnEditProduct" class="bg-white hidden w-2/3 letra-azul border-2 rounded-md font-bold p-2 b-azul-escuro">Editar produto</button>
+                        <span id="errorUrlInvalida" class="text-sm text-red-500 hidden">*Url inválida*</span>
+                        <span id="errorUrlVazia" class="text-sm text-red-500 hidden">*Campo obrigatório*</span>
+                    </div>
+                </div>
+                <div class="h-4/6 rounded-md w-2 bg-black"></div>
+                <div class="flex justify-evenly rounded-md flex-col h-full w-2/3 items-center">
+                    <div class="flex justify-evenly rounded-md flex-col pl-10 py-0 bg-white h-5/6 w-5/6">
+                        <div class="w-4/5 h-editado border-b-2 b-azul-escuro">
+                            <div class="flex flex-row items-center space-x-4 text-xl">
+                                <span class="font-bold">Nome</span>
+                                <span id="errorNome" class="text-sm text-red-500 hidden"> *Campo obrigatório* </span>
+                            </div>
+                            <input id="nome" class="h-1/2 bg-transparent w-full"placeholder="nome do produto"  type="text">
+                        </div>
+                        <div class="w-4/5 h-editado border-b-2 b-azul-escuro">
+                            <div class="flex flex-row items-center space-x-4 text-xl">
+                                <span class="font-bold">Descrição</span>
+                                <span id="errorDescricao" class="text-sm hidden text-red-500"> *Campo obrigatório* </span>
+                            </div>
+                            <input id="descricao" class="h-1/2 bg-transparent w-full"placeholder="descrição do produto"  type="text">
+                        </div>
+                        <div class="w-4/5 h-editado border-b-2 b-azul-escuro">
+                            <div class="flex flex-row items-center space-x-4 text-xl">
+                                <span class="font-bold">Valor</span>
+                                <span id="errorValorVazio" class="text-sm hidden text-red-500"> *Campo obrigatório* </span>
+                                <span id="errorValorQuantidade" class="text-sm hidden text-red-500"> *valor deve ser > 1 e < 1000* </span>
+                            </div>
+                            <input id="valor" class="h-1/2 bg-transparent w-full"placeholder="descrição do produto"  type="number" min="1" max="999">
+                        </div>
+                        <div class="w-5/6 h-editado border-b-2 b-azul-escuro">
+                            <div class="flex flex-row items-center space-x-4 text-xl">
+                                <span class="font-bold text-">Quantidade</span>
+                                <span id="errorQuantidadeVazio" class="text-sm hidden text-red-500"> *Campo obrigatório* </span>
+                                <span id="errorQuantidadeValor" class="text-sm hidden text-red-500"> *O valor deve ser > 0 e < 1000* </span>
+                            </div>
+                            <input id="quantidade" class="h-1/2 bg-transparent w-full"placeholder="descrição do produto"  type="number" min="1" max="999">
+                        </div>
+                        <div class="w-4/5 h-editado space-y-2 flex flex-col">
+                            <div class="flex flex-row items-center space-x-4 text-xl">
+                                <span class="font-bold">Categoria produto</span>
+                                <span id="errorCategoriaProduto" class="text-sm hidden text-red-500"> *Ao menos 1 categoria* </span>
+                            </div>
+                            <select id="categoriaProduto" class="border-2 multiple b-azul-escuro rounded-md" name=""></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="flex flex-row space-x-9 h-2/5 w-full justify-evenly">
+        <div class="h-2/6 w-4/5 items-center space-x-9 flex ">
+            <a href="../administração (ADM)/administração_ADM.html">
+                            <div class="flex flex-row items-center space-x-2">
+                <img src="../img/Arrow back.png" alt="">
+                <p class="text-xl">Voltar</p>
+            </div>
+            </a>
+            <div class="h-full tela flex-grow rounded-b-3xl items-center flex justify-around">
+                <div class="flex flex-row border-roxa h-2/3 rounded-2xl p-2 border-4 w-4/5">
+                    <input class="focus:outline-none px-2 flex-grow bg-transparent" type="text" placeholder="Filtre aqui">
+                    <img src="../img/search (1).png" alt="">
+                </div>
+                <img src="../img/Filter list.png" alt="">
+            </div>
+            <div id="addProduto" class="tela cursor-pointer w-1/5 h-full rounded-b-3xl px-3 flex flex-row space-y-2 items-center justify-center relative transition-all duration-500">
+                <img id="btnAdicionar" class="" src="../img/Add circle.png" alt="Add circle">
+                <div class="w-full flex flex-col items-center group">
+                    <span class="text-lg">Adicionar produto</span>
+                    <hr class="linha w-0 h-1 group-hover:w-5/6 hr-transicao">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="h-3/5">
+        <table id="tbl_produtos" class="tela w-full h-full space-y-8 flex flex-col">
+            <thead class="flex h-1/6">
+                <tr class="text-white h-full flex flex-row items-center w-full space-x-1">
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center"></th>
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center">ID</th>
+                    <th class="w-nome azul-escuro text-white flex justify-center items-center h-full">Nome</th>
+                    <th class="w-1/6 azul-escuro text-white flex justify-center items-center h-full">Categoria</th>
+                    <th class="w-numero text-white azul-escuro flex justify-center items-center h-full">Preço</th>
+                    <th class="w-numero azul-escuro text-white flex justify-center items-center h-full">Quantidade</th>
+                    <th class="w-acao h-full space-x-4 flex-grow azul-escuro justify-end flex pr-6 items-center flex">
+                        <img id="lixeira" class="h-3/5" src="../img/Trash Can.png" alt="Delete">
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="h-5/6 overflow-y-auto overflow-x-hidden space-y-2">
+                <!-- <tr class="text-black h-1/6 flex flex-row items-center w-item space-x-1">
+                    <th class="w-id h-full bg-white flex justify-center items-center">
+                        <input class="h-2/3 w-2/3" type="checkbox">
+                    </th>
+                    <th class="w-id bg-white flex justify-center items-center h-full">1</th>
+                    <th class="w-nome bg-white flex justify-center items-center h-full">Ração para pássaro 5kg - ração pet mais vida bla bla bla <br> asasas asasasasas asasa  asasassasas</th>
+                    <th class="w-1/6 bg-white flex justify-center items-center h-full">Cachorro</th>
+                    <th class="w-numero bg-white flex justify-center items-center h-full">R$29.99</th>
+                    <th class="w-numero bg-white flex justify-center items-center h-full rounded-r-lg">129</th>
+                </tr> -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

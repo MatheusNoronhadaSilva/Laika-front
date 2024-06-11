@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFDD95;
+}
+
+.criacao {
+    background-color: #FFD274;
+}
+
+.linha {
+    background-color: #86A8FF;
+    border-color: #86A8FF;
+}
+
+.z--1 {
+    z-index: -1;
+}
+
+.z--2{
+    z-index: -2;
+}
+
+.espacamento-direita{
+    right: -50px;
+}
+.h-editado {
+    height: 77%;
+}
+
+.h-editado2{
+    height: 50%;
+}
+
+.h-editado3{
+    height: 95%;
+}
+
+.hr-transicao {
+    transition: width 0.3s ease-in-out;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="novo_funcionario.css">
+    <script src="novo_funcionario.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen w-screen overflow-hidden">
+    <main class="flex h-full w-full flex-row">
+        <div id="telaInfo1" class="criacao flex flex-col h-screen w-1/3 pl-14 py-6 justify-around">
+            <a href="../CMS_ADM_funcionarios/CMS_ADM_funcionarios.html">
+                <div class="flex w-full h-10 items-center">
+                    <img class="h-full" src="../img/Arrow back.png" alt="">
+                    <span>Voltar</span>
+                </div>
+            </a>
+            <div class="flex flex-col flex-grow justify-evenly">
+                <div class="space-y-6">
+                    <div class="space-y-2 group">
+                        <h1 id="criarConta1" class="text-3xl font-bold">CRIAR NOVO FUNCIONÁRIO</h1>
+                        <hr class="linha h-2 rounded-lg w-5/6">
+                    </div>
+                </div>
+                <div class="flex flex-col w-5/6 space-y-4">
+                    <div class="flex flex-row justify-between">
+                        <div class="w-44">
+                            <h3 class="font-bold text-xl">Nome <span id="errorNome"
+                                    class="text-md text-red-500 font-bold hidden">*</span> </h3>
+                            <div class="flex flex-row border-b-4 w-full border-black">
+                                <img src="../img/Drive file rename outline.png" alt="">
+                                <input id="nome" class="w-full focus:outline-none rounded-lg bg-transparent"
+                                    type="text">
+                            </div>
+                        </div>
+                        <div class="w-44">
+                            <h3 class="font-bold text-xl">Sobrenome</h3>
+                            <div class="flex flex-row border-b-4 border-black">
+                                <img src="../img/Drive file rename outline.png" alt="">
+                                <input id="sobrenome" class="w-full focus:outline-none rounded-lg bg-transparent"
+                                    type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Email 
+                            <span id="errorEmail" class="text-md text-red-500 font-bold hidden">*</span>
+                            <span id="errorRepetido" class="text-sm text-red-500 font-bold hidden">*email ja existente</span>
+
+                        </h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Email.png" alt="">
+                            <input id="email" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Senha <span id="errorSenha"
+                                class="text-md text-red-500 font-bold hidden">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Padlock Outline.png" alt="">
+                            <input id="senha" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Confirmar senha <span id="errorConfirmarSenha"
+                                class="text-md text-red-500 font-bold hidden">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Padlock Outline.png" alt="">
+                            <input id="confirmar_senha" class="w-full focus:outline-none rounded-lg bg-transparent"
+                                type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Telefone <span id="errorTelefone"
+                                class="text-md text-red-500 font-bold hidden">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Phone.png" alt="">
+                            <input maxlength="11" placeholder="xxxxx-xxxx" id="telefone"
+                                class="w-full focus:outline-none rounded-lg bg-transparent" type="tel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-2 group">
+                <h1 onclick="getInfo1()" class="text-3xl font-bold group-hover:w-full">CADASTRAR FUNCIONÁRIO</h1>
+                <hr class="linha h-2 rounded-lg w-0 group-hover:w-5/6 hr-transicao">
+            </div>
+        </div>
+        </div>
+        <div id="telaInfo2" class="criacao flex flex-col hidden h-screen w-1/3 pl-14 py-4">
+            <a href="../novo funcionário/novo_funcionario.html">
+                <div class="flex w-full h-10 items-center">
+                    <img class="h-full" src="../img/Arrow back.png" alt="">
+                    <span>Voltar</span>
+                </div>
+            </a>
+            <div class="flex flex-col flex-grow justify-around">
+                <div class="space-y-6">
+                    <div class="space-y-2 group">
+                        <h1 class="text-3xl font-bold">ADICIONE SEU ENDEREÇO <br> E CARGO </h1>
+                        <hr class="linha h-2 rounded-lg w-5/6">
+                    </div>
+                    <h2 class="text-xl font-bold w-1/2">Último passo para cadastrar um funcionário!</h2>
+                </div>
+                <div class="flex flex-col w-5/6 space-y-4">
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Rua <span id="errorRua"
+                                class="hidden text-md text-red-500 font-bold">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Email.png" alt="">
+                            <input id="rua" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Bairro <span id="errorBairro"
+                                class="hidden text-md text-red-500 font-bold">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Padlock Outline.png" alt="">
+                            <input id="bairro" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Cidade <span id="errorCidade"
+                                class="hidden text-md text-red-500 font-bold">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Padlock Outline.png" alt="">
+                            <input id="cidade" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Estado <span id="errorEstado"
+                                class="hidden text-md text-red-500 font-bold">*</span></h3>
+                        <div class="flex flex-row border-b-4 border-black">
+                            <img src="../img/Phone.png" alt="">
+                            <input id="estado" maxlength="2" class="w-full focus:outline-none rounded-lg bg-transparent" type="text">
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-xl">Ocupação<span id="errorConfirmarSenha"
+                                class="text-md text-red-500 font-bold hidden">*</span></h3>
+                        <div id="checkButton" class="grid grid-cols-3 gap-0">
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-2 group">
+                    <h1 id="criarConta2" class="text-3xl font-bold group-hover:w-full">CADASTRAR FUNCIONÁRIO</h1>
+                    <hr class="linha h-2 rounded-lg w-0 group-hover:w-5/6 hr-transicao">
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow flex flex-col justify-end items-start space-y-0">
+            <img class="h-3/6 z--1 w-3/4" src="../img/image-removebg-preview (2) 1.png" alt="">
+            <img class="h-editado2 w-4/6 ml-auto" src="../img/image-removebg-preview 1 (1).png" alt="">
+        </div>
+        <img class="absolute w-3/4 z--2 h-full bottom-16 right-0" src="../img/Vector (2).png" alt="">
+        <img class="absolute w-3/4 z--1 h-editado3 bottom-0 espacamento-direita" src="../img/Vector (1).png" alt="">
+    </main>
+</body>
+
+</html>

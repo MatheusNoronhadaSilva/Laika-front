@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CMS_ADM_funcionarios.css">
+    <script src="CMS_ADM_funcionarios.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<a href="../editar funcionario/editar_funcionario.html"></a>
+<body class="h-screen w-screen flex flex-col">
+    <header class="flex flex-row space-x-9 h-2/5 w-full justify-evenly">
+        <div class="h-2/6 w-4/5 items-center space-x-9 flex ">
+            <a href="../administração (ADM)/administração_ADM.html">
+                            <div class="flex flex-row items-center space-x-2">
+                <img src="../img/Arrow back.png" alt="">
+                <p class="text-xl">Voltar</p>
+            </div>
+            </a>
+            <div class="h-full tela flex-grow rounded-b-3xl items-center flex justify-around">
+                <div class="flex flex-row border-roxa h-2/3 rounded-2xl p-2 border-4 w-4/5">
+                    <input class="focus:outline-none px-2 flex-grow bg-transparent" type="text" placeholder="Filtre aqui">
+                    <img src="../img/search (1).png" alt="">
+                </div>
+                <img src="../img/Filter list.png" alt="">
+            </div>
+            <a class="h-full w-1/4" href="../novo funcionário/novo_funcionario.html">
+                <div class="tela cursor-pointer w-full h-full rounded-b-3xl px-3 flex flex-row space-y-2 items-center justify-center relative transition-all duration-500">
+                    <img id="btnAdicionar" class="" src="../img/Add circle.png" alt="Add circle">
+                    <div class="w-full flex flex-col items-center group">
+                        <span class="text-lg">Adicionar funcionário</span>
+                        <hr class="linha w-0 h-1 group-hover:w-5/6 hr-transicao">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </header>
+    <main class="h-3/5">
+        <table id="tbl_produtos" class="tela w-full h-full space-y-8 flex flex-col">
+            <thead class="flex h-1/6">
+                <tr class="text-white h-full flex flex-row items-center w-full space-x-1">
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center"></th>
+                    <th class="w-id text-white h-full azul-escuro flex justify-center items-center">ID</th>
+                    <th class="w-nome azul-escuro text-white flex justify-center items-center h-full">Nome</th>
+                    <th class="w-1/6 azul-escuro text-white flex justify-center items-center h-full">Cargos</th>
+                    <th class="w-1/5 text-white azul-escuro flex justify-center items-center h-full">Email</th>
+                    <th class="w-numero azul-escuro text-white flex justify-center items-center h-full">Agendamentos hoje</th>
+                    <th class="w-acao h-full space-x-4 flex-grow azul-escuro justify-end flex pr-6 items-center flex">
+                        <img id="lixeira" class="h-3/5" src="../img/Trash Can.png" alt="Delete">
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="h-5/6 overflow-y-auto overflow-x-hidden space-y-2">
+                <!-- <tr class="text-black h-1/6 flex flex-row items-center w-item space-x-1">
+                    <th class="w-id h-full bg-white flex justify-center items-center">
+                        <input class="h-2/3 w-2/3" type="checkbox">
+                    </th>
+                    <th class="w-id bg-white flex justify-center items-center h-full">1</th>
+                    <th class="w-nome bg-white flex justify-center items-center h-full"></th>
+                    <th class="w-1/6 bg-white flex justify-center items-center h-full">Cachorro</th>
+                    <th class="w-1/5 bg-white flex justify-center items-center h-full">R$29.99</th>
+                    <th class="w-numero bg-white flex justify-center items-center h-full rounded-r-lg">129</th>
+                </tr> -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

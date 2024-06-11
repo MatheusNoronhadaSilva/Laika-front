@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="administração_funcionário.css">
+    <script src="administração_funcionário.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="h-screen w-screen">
+    <main class="w-full h-full px-12 py-10 flex flex-col">
+        <div class="flex flex-row w-full h-full">
+            <div class="flex flex-col w-2/3 h-full justify-around">
+                <div class="flex flex-row items-center space-x-9">
+                    <img src="../img/Ellipse.png" alt="">
+                    <h1 id="nomeFuncionario" class="font-bold text-2xl">Abracadabra - funcionario</h1>
+                </div>
+                <div class="tela space-y-6 flex flex-col w-full h-2/3 items-center py-10">
+                    <h2 class="font-bold text-5xl">O QUE DESEJA FAZER?</h2>
+                    <div class="w-full flex flex-col items-center pt-8 group">
+                        <a href="../CMS_funcionario_produtos/CMS_funcionario_produtos.html">
+                            <h3 class="cursor-pointer text-3xl">Verificar estoque de produtos</h3>
+                        </a>
+                        <hr class="linha w-0 h-2 group-hover:w-2/3 hr-transicao">
+                    </div>
+                    <div class="w-full flex flex-col items-center group">
+                        <a href="../CMS_funcionario_agendamentoServicos/CMS_funcionario_agendamentoServicos.html">
+                            <h3 class="text-3xl">Verificar agendamentos de serviços</h3>
+                        </a>
+                        <hr class="linha w-0 h-2 group-hover:w-2/3 hr-transicao">
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col w-1/2 items-center justify-end">
+                <div class="relative h-full w-full circulo right-10 top-14 z--1 rounded-full"></div>
+                <img class="absolute h-full abaixar-animais w-2/6" src="../img/image-removebg-preview (1) 1.png" alt="">
+            </div>
+        </div>
+        <div class="w-full h-20 flex items-center pl-14 azul-escuro">
+            <a href="../index.html">
+                <h4 class="text-xl text-white">Voltar para a tela de login</h4>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

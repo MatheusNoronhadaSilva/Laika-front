@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFDD95;
+}
+
+.tela {
+    background-color: #FFD274;
+}
+
+.border-roxa{
+    border-color: #86A8FF;
+}
+
+.roxo{
+    background-color: #86A8FF;
+}
+
+.roxo:hover{
+    background-color: #06038F;
+}
+
+.linha {
+    background-color: #86A8FF;
+    border-color: #86A8FF;
+}
+
+.azul-escuro{
+    background-color: #06038F;
+}
+
+.b-azul-escuro{
+    border-color: #06038F;
+}
+
+.letra-azul{
+    color: #06038F;
+}
+
+.hr-transicao {
+    transition: width 0.3s ease-in-out;
+}
+.expandirAdd {
+    height: 37% !important; /* Permite que a altura se ajuste ao conteúdo */
+    transition: height 0.5s ease-in-out;
+}
+
+.expandirFiltro {
+    height: 50% !important;
+    transition: height 0.5s ease-in-out;
+}
+
+.h-editado{
+    height: 12%;
+}
+
+.z--1{
+    z-index: -1;;
+}
+
+.z--2{
+    z-index: -2;
+}
+
+.z1{
+    z-index: +1;
+}
+
+.opacidade{
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+.w-nome{
+    width: 25%;
+}
+
+.w-id{
+    width: 5%;
+}
+
+.w-item{
+    min-width: 101% !important ;
+}
+
+.h-item{
+    min-height: 18% !important;
+}
+
+.w-numero{
+    width: 12%;
+}
+
+.w-acao{
+    width: 5%;
+}
