@@ -4,7 +4,7 @@
 
 
 ### Situação Problema: 
-O PetShopping é uma loja especializada em produtos e serviços para animais de estimação 
+O PetShopping é uma loja especializada em produtos e serviços para animais de estimação
 localizada em uma área urbana movimentada. Atualmente, eles estão lidando com várias 
 questões de gerenciamento, incluindo controle de estoque, agendamento de serviços de 
 banho e tosa, acompanhamento de consultas veterinárias e gerenciamento de clientes e seus 
